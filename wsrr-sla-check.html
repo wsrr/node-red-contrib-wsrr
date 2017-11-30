@@ -1,0 +1,53 @@
+	<script type="text/javascript">
+    RED.nodes.registerType('wsrr-sla-check',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            wsrrServer: {value:"", type:"wsrr-config"},
+			consumerID: {value:"", required:true},
+			contextID: {value:"", required:true},
+			endpointClassification: {value:"http://www.ibm.com/xmlns/prod/serviceregistry/6/1/GovernanceProfileTaxonomy#Production", required:true},
+			fullResults: {value:false, required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return "wsrr-sla-check";
+        },
+		category: "WSRR"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="wsrr-sla-check">
+    <div class="form-row">
+        <label for="node-input-wsrrServer"><i class="icon-tag"></i> WSRR Server</label>
+        <input type="text" id="node-input-wsrrServer" placeholder="WSRR Server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-consumerID"><i class="icon-tag"></i> Consumer ID</label>
+        <input type="text" id="node-input-consumerID" placeholder="Consumer ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-contextID"><i class="icon-tag"></i> Context ID</label>
+        <input type="text" id="node-input-contextID" placeholder="Context ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-endpointClassification"><i class="icon-tag"></i> Endpoint Classification</label>
+        <input type="text" id="node-input-endpointClassification" placeholder="Endpoint Classification">
+    </div>
+    <div class="form-row">
+        <label for="node-input-fullResults"><i class="icon-tag"></i> Full Results</label>
+        <input type="checkbox" id="node-input-fullResults" placeholder="Full Results">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="wsrr-sla-check">
+    <p>Use this node to find all of the service endpoints associated with a particular SLA relationship.</p>
+	<p>Consumer ID is the consumer identifier on the consuming Version. Context ID is the context identifier
+	on the consuming SLA. Endpoint Classification is the classification that must be present on the endpoint, the 
+	default is the classification for Production endpoints.</p>
+	<p>The results are stored on the message as a wsrrResults property. The first endpoint
+	is wsrrResults.endpoint and a list of all endpoints is in the array wsrrResults.endpoints.</p>
+	<p>If Full Results is checked then the WSRR endpoint objects are put on wsrrResults.wsrrObjects in an array.</p>
+</script>

@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('wsrr-config',{
+        category: 'config',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:"wsrr server", required:true},
+			hostname: {value:"wsrr.myhost.com", required:true},
+			port: {value:"9443", required:true, validate:RED.validators.number()},
+			username: {value:"username", required:true},
+			password: {value:"password", required:true}
+        },
+        label: function() {
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="wsrr-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-hostname"><i class="icon-tag"></i> Hostname</label>
+        <input type="text" id="node-config-input-hostname" placeholder="Hostname">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-tag"></i> Port</label>
+        <input type="text" id="node-config-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-username"><i class="icon-tag"></i> Username</label>
+        <input type="text" id="node-config-input-username" placeholder="Username">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="icon-tag"></i> Password</label>
+        <input type="password" id="node-config-input-password" placeholder="Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="wsrr-config">
+    <p>Provide auth config for WSRR nodes to use. Assumes the WSRR server is secured and available on HTTPS. Provide the HTTPS port.</p>
+</script>

@@ -1,0 +1,37 @@
+	<script type="text/javascript">
+    RED.nodes.registerType('wsrr-graph-query',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            wsrrServer: {value:"", type:"wsrr-config"},
+			queryXpath: {value:"", required:true},
+			name: {value:"", required:false}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "wsrr-graph-query";
+        },
+		category: "WSRR"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="wsrr-graph-query">
+    <div class="form-row">
+        <label for="node-input-wsrrServer"><i class="icon-tag"></i> WSRR Server</label>
+        <input type="text" id="node-input-wsrrServer" placeholder="WSRR Server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-queryXpath"><i class="icon-tag"></i> Query Xpath</label>
+        <input type="text" id="node-input-queryXpath" placeholder="Query Xpath">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="wsrr-graph-query">
+    <p>Run a graph query against WSRR, the results are stored on the message as a wsrrResults property.</p>
+</script>

@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-wsrr",
+  "version": "0.0.1",
+  "description": "WSRR nodes for Node-RED",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apiconnect-soa-transfer-tool": "^1.0.0"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "wsrr-config": "wsrr-config.js",
+      "wsrr-graph-query": "wsrr-graph-query.js",
+      "wsrr-sla-check": "wsrr-sla-check.js"
+    }
+  },
+  "author": "David Seager <seager@uk.ibm.com> (http://www.ibm.com)",
+  "license": "Apache-2.0"
+}
