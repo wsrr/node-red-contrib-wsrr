@@ -5,7 +5,7 @@ Sample code showing how to create nodes for Node-RED to connect to a WebSphere S
 
 ## Installation
 
-	npm install node-red-contrib-wsrr
+	npm install -g node-red-contrib-wsrr
 
 ## Nodes
 
@@ -42,7 +42,7 @@ The sla check node is configured to check for an active SLA by context and consu
 
 ## About
 
-The nodes use the NodeJS WSRR library provided in the NPM package [apiconnect-soa-transfer-tool](https://www.npmjs.com/package/apiconnect-soa-transfer-tool) to communicate with WSRR. The library provides functions to run a graph query and run a named query, the named query `SLAEndpointLookup` is used to perform the SLA check. 
+The nodes use the NodeJS WSRR library provided in the NPM package [apiconnect-soa-transfer-tool](https://www.npmjs.com/package/apiconnect-soa-transfer-tool) to communicate with WSRR. The library provides functions to run a graph query and run a named query, the named query `SLAEndpointLookup` is used to perform the SLA check.
 
 
 ## License
