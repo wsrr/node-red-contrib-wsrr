@@ -18,6 +18,10 @@
       "wsrr-sla-check": "wsrr-sla-check.js"
     }
   },
+  "repository": {
+      "type" : "git",
+      "url" : "https://github.com/wsrr/node-red-contrib-wsrr.git"
+  },
   "author": "David Seager <seager@uk.ibm.com> (http://www.ibm.com)",
   "license": "Apache-2.0"
 }
